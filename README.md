@@ -48,7 +48,7 @@ metadata:
   name: network-readiness-rule
 spec:
   conditions:
-    - type: "tigera.io/CalicoReady"
+    - type: "example.com/CNIReady"
       requiredStatus: "True"
   taint:
     key: "readiness.k8s.io/NetworkReady"
@@ -58,6 +58,7 @@ spec:
   nodeSelector:
     matchLabels:
       node-role.kubernetes.io/worker: ""
+
 ```
 
 Find a more detailed walkthrough of setting up Node Readiness Controller in your Kind cluster [here](https://github.com/kubernetes-sigs/node-readiness-controller/blob/main/docs/TEST_README.md).
